@@ -11,8 +11,8 @@ import Image from "next/image";
 import { cn } from "@/src/lib/utils";
 import { Building2, Briefcase, Calendar, Users, Handshake } from "lucide-react";
 import { useMemo } from "react";
-import { DETAILED_PROJECTS } from "../../db/detail-project";
-import { PROJECTS_NAME } from "../../db/constants";
+import { DETAILED_PROJECTS } from "../../../db/detail-project";
+import { PROJECTS_NAME } from "../../../db/constants";
 
 type ProjectInfoItem = {
   company: string;
