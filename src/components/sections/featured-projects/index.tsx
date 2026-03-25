@@ -1,10 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import { PROJECTS } from "../../db/projects";
+import { PROJECTS } from "../../../db/projects";
 import { ProjectCard } from "./project-card";
 import { ProjectModal } from "./project-modal";
-import { PROJECTS_NAME } from "../../db/constants";
+import { PROJECTS_NAME } from "../../../db/constants";
 
 export function FeaturedProjects() {
   const [open, setOpen] = useState<boolean>(false);

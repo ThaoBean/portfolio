@@ -5,7 +5,7 @@ import { ExternalLink, Github } from "lucide-react";
 import { Card, CardContent } from "../../ui/card";
 import { Badge } from "../../ui/badge";
 import Image from "next/image";
-import { PROJECTS_NAME } from "../../db/constants";
+import { PROJECTS_NAME } from "../../../db/constants";
 
 type ProjectCardProps = {
   id: string;

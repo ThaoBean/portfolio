@@ -1,48 +1,7 @@
 "use client";
 
+import { EXPERIENCES } from "@/src/db/experience";
 import { motion } from "framer-motion";
-
-type ExperienceItem = {
-  company: string;
-  role: string;
-  period: string;
-  description: string;
-  technologies: string[];
-};
-
-const experiences: ExperienceItem[] = [
-  {
-    company: "Centamess",
-    role: "Full-stack Developer",
-    period: "03/2025 — Present",
-    description:
-      "Developed an omnichannel customer care platform with real-time messaging, multi-channel integrations, and scalable chat infrastructure.",
-    technologies: ["React", "Next.js", "NestJS", "WebSocket", "Tailwind"],
-  },
-  {
-    company: "Mission Digitalisierung GmbH",
-    role: "Frontend Developer",
-    period: "01/2023 — 05/2024",
-    description:
-      "Built frontend microservices for flight operations with real-time status updates, Redux state management, and automated testing.",
-    technologies: [
-      "React",
-      "TypeScript",
-      "Redux Toolkit",
-      "WebSocket",
-      "Jest",
-      "Cypress",
-    ],
-  },
-  {
-    company: "Connecta",
-    role: "Frontend Developer",
-    period: "06/2022 — 12/2022",
-    description:
-      "Maintained and enhanced a mobile booking application, improving UX stability and integrating RESTful APIs.",
-    technologies: ["React Native", "TypeScript", "REST API"],
-  },
-];
 
 export function ExperienceTimeline() {
   return (
@@ -65,7 +24,7 @@ export function ExperienceTimeline() {
           <div className='absolute left-4 top-0 h-full w-px bg-white/10 md:left-1/2' />
 
           <div className='space-y-12'>
-            {experiences.map((exp, index) => (
+            {EXPERIENCES.map((exp, index) => (
               <motion.div
                 key={exp.company + index}
                 initial={{ opacity: 0, y: 24 }}
