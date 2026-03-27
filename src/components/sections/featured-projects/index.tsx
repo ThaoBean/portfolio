@@ -1,12 +1,14 @@
 "use client";
 
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { PROJECTS } from "../../../db/projects";
 import { ProjectCard } from "./project-card";
 import { ProjectModal } from "./project-modal";
 import { PROJECTS_NAME } from "../../../db/constants";
 
 export function FeaturedProjects() {
+  const { t } = useTranslation();
   const [open, setOpen] = useState<boolean>(false);
   const [selectedProject, setSelectedProject] = useState<PROJECTS_NAME>();
 
@@ -17,11 +19,10 @@ export function FeaturedProjects() {
           {/* section title */}
           <div className='mb-12'>
             <h2 className='text-2xl font-semibold text-white sm:text-3xl'>
-              Featured Projects
+              {t("sections.featuredProjects.title")}
             </h2>
             <p className='mt-3 max-w-2xl text-gray-400'>
-              Selected work focused on real-time systems, scalable UI, and
-              production-ready architecture.
+              {t("sections.featuredProjects.description")}
             </p>
           </div>
 

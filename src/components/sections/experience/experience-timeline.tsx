@@ -2,19 +2,21 @@
 
 import { EXPERIENCES } from "@/src/db/experience";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 export function ExperienceTimeline() {
+  const { t } = useTranslation();
+
   return (
     <section id='experience' className='py-24 sm:py-28'>
       <div className='mx-auto max-w-6xl px-6'>
         {/* header */}
         <div className='mb-16'>
           <h2 className='text-2xl font-semibold text-white sm:text-3xl'>
-            Experience
+            {t("sections.experience.title")}
           </h2>
           <p className='mt-3 max-w-2xl text-gray-400'>
-            My professional journey building scalable and real-time web
-            applications.
+            {t("sections.experience.description")}
           </p>
         </div>
 
