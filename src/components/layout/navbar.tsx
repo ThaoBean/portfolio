@@ -131,7 +131,10 @@ export function Navbar() {
                   {t(item.label)}
                   {isActive && (
                     <motion.span
-                      layoutId='nav-underline'
+                      initial={{ scaleX: 0 }}
+                      animate={{ scaleX: 1 }}
+                      transition={{ duration: 0.18, ease: "easeOut" }}
+                      style={{ transformOrigin: "left" }}
                       className='absolute -bottom-1 left-0 h-[2px] w-full bg-indigo-400'
                     />
                   )}
