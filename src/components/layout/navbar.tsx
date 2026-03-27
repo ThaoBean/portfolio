@@ -1,20 +1,70 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useLocale } from "@/src/i18n/use-locale";
+import { useTranslation } from "react-i18next";
 
 const navItems = [
-  { label: "Projects", href: "#projects" },
-  { label: "Skills", href: "#skills" },
-  { label: "Experience", href: "#experience" },
-  { label: "Contact", href: "#contact" },
+  { label: "common.nav.projects", href: "#projects" },
+  { label: "common.nav.skills", href: "#skills" },
+  { label: "common.nav.experience", href: "#experience" },
+  { label: "common.nav.contact", href: "#contact" },
 ];
 
 export function Navbar() {
+  const { t } = useTranslation();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState<string>("");
+  const { language, setLanguage, supportedLanguages } = useLocale();
+  const [langOpen, setLangOpen] = useState(false);
+  const langRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const onPointerDown = (e: MouseEvent | TouchEvent) => {
+      const target = e.target as Node | null;
+      if (!target) return;
+      if (!langRef.current) return;
+      if (!langRef.current.contains(target)) setLangOpen(false);
+    };
+
+    document.addEventListener("mousedown", onPointerDown);
+    document.addEventListener("touchstart", onPointerDown);
+    return () => {
+      document.removeEventListener("mousedown", onPointerDown);
+      document.removeEventListener("touchstart", onPointerDown);
+    };
+  }, []);
+
+  const currentLang = (() => {
+    switch (language) {
+      case "vi":
+        return {
+          code: "VI",
+          label: t("common.languages.vi"),
+          flag: "🇻🇳",
+        };
+      case "en":
+      default:
+        return {
+          code: "EN",
+          label: t("common.languages.en"),
+          flag: "🇺🇸",
+        };
+    }
+  })();
+
+  const langMeta = (lng: string) => {
+    switch (lng) {
+      case "vi":
+        return { code: "VI", label: t("common.languages.vi"), flag: "🇻🇳" };
+      case "en":
+      default:
+        return { code: "EN", label: t("common.languages.en"), flag: "🇺🇸" };
+    }
+  };
 
   // detect scroll for blur/shadow
   useEffect(() => {
@@ -55,7 +105,7 @@ export function Navbar() {
           }
         `}
       >
-        <div className='mx-auto flex h-16 max-w-6xl items-center justify-between px-6'>
+        <div className='mx-auto flex h-16 max-w-6xl items-center px-6 md:grid md:grid-cols-[auto_1fr_auto] md:gap-6'>
           {/* logo */}
           <a
             href='#'
@@ -64,8 +114,8 @@ export function Navbar() {
             Thao.dev
           </a>
 
-          {/* desktop nav */}
-          <nav className='hidden items-center gap-8 md:flex'>
+          {/* desktop nav (center) */}
+          <nav className='hidden items-center justify-center gap-8 md:flex'>
             {navItems.map((item) => {
               const isActive = active === item.href;
 
@@ -78,9 +128,7 @@ export function Navbar() {
                     ${isActive ? "text-white" : "text-gray-400 hover:text-white"}
                   `}
                 >
-                  {item.label}
-
-                  {/* active underline */}
+                  {t(item.label)}
                   {isActive && (
                     <motion.span
                       layoutId='nav-underline'
@@ -92,10 +140,58 @@ export function Navbar() {
             })}
           </nav>
 
+          {/* language (right) */}
+          <div ref={langRef} className='relative hidden md:block'>
+            <button
+              type='button'
+              onClick={() => setLangOpen((v) => !v)}
+              className='inline-flex w-30 items-center gap-2 whitespace-nowrap rounded-lg border border-white/10 bg-white/5 px-3 py-2 text-sm text-white transition hover:bg-white/10'
+              aria-haspopup='menu'
+              aria-expanded={langOpen}
+            >
+              <span aria-hidden='true'>{currentLang.flag}</span>
+              <span className='flex-1 truncate text-left text-sm'>
+                {currentLang.label}
+              </span>
+            </button>
+
+            {langOpen && (
+              <div
+                role='menu'
+                className='absolute right-0 mt-2 w-30 overflow-hidden rounded-xl border border-white/10 bg-[#0B0F19]/95 backdrop-blur-xl shadow-[0_12px_40px_rgba(0,0,0,0.35)]'
+              >
+                {supportedLanguages.map((lng) => {
+                  const meta = langMeta(lng);
+                  const isActive = language === lng;
+
+                  return (
+                    <button
+                      key={lng}
+                      type='button'
+                      role='menuitem'
+                      onClick={() => {
+                        setLanguage(lng);
+                        setLangOpen(false);
+                      }}
+                      className={`flex w-full items-center gap-2 px-3 py-2 text-sm transition ${
+                        isActive
+                          ? "bg-white/10 text-white"
+                          : "text-gray-300 hover:bg-white/5 hover:text-white"
+                      }`}
+                    >
+                      <span aria-hidden='true'>{meta.flag}</span>
+                      <span className='flex-1 text-left'>{meta.label}</span>
+                    </button>
+                  );
+                })}
+              </div>
+            )}
+          </div>
+
           {/* mobile button */}
           <button
             onClick={() => setOpen((v) => !v)}
-            className='inline-flex items-center justify-center rounded-lg border border-white/10 bg-white/5 p-2 text-white md:hidden'
+            className='ml-auto inline-flex items-center justify-center rounded-lg border border-white/10 bg-white/5 p-2 text-white md:hidden'
           >
             {open ? <X size={18} /> : <Menu size={18} />}
           </button>
@@ -113,6 +209,30 @@ export function Navbar() {
             className='fixed top-16 z-40 w-full border-b border-white/10 bg-[#0B0F19]/95 backdrop-blur-xl md:hidden'
           >
             <div className='mx-auto max-w-6xl px-6 py-4'>
+              <div className='mb-4 flex items-center justify-end gap-2'>
+                {supportedLanguages.map((lng) => {
+                  const meta = langMeta(lng);
+                  const isActive = language === lng;
+
+                  return (
+                    <button
+                      key={lng}
+                      type='button'
+                      onClick={() => setLanguage(lng)}
+                      className={`inline-flex items-center gap-2 rounded-lg border border-white/10 px-3 py-2 text-xs transition ${
+                        isActive
+                          ? "bg-white/10 text-white"
+                          : "bg-white/5 text-gray-300 hover:bg-white/10 hover:text-white"
+                      }`}
+                      aria-label={`Switch language to ${meta.label}`}
+                    >
+                      <span aria-hidden='true'>{meta.flag}</span>
+                      <span>{meta.code}</span>
+                    </button>
+                  );
+                })}
+              </div>
+
               <nav className='flex flex-col gap-4'>
                 {navItems.map((item) => (
                   <a
@@ -121,7 +241,7 @@ export function Navbar() {
                     onClick={() => setOpen(false)}
                     className='text-gray-300 transition hover:text-white'
                   >
-                    {item.label}
+                    {t(item.label)}
                   </a>
                 ))}
               </nav>

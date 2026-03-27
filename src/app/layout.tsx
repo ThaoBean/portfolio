@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "../components/layout/navbar";
+import { I18nProvider } from "../i18n/provider";
 
 const geistSans = Inter({
   variable: "--font-inter",
@@ -31,8 +32,10 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#0B0F19] text-white`}
       >
-        <Navbar />
-        <div className='pt-16'>{children}</div>
+        <I18nProvider>
+          <Navbar />
+          <div className='pt-16'>{children}</div>
+        </I18nProvider>
       </body>
     </html>
   );
