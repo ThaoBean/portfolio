@@ -6,11 +6,17 @@ import { Card, CardContent } from "../../ui/card";
 import { Badge } from "../../ui/badge";
 import Image from "next/image";
 import { PROJECTS_NAME } from "../../../db/constants";
+import { useTranslation } from "react-i18next";
+
+type TranslatedText = {
+  en: string;
+  vi: string;
+};
 
 type ProjectCardProps = {
   id: string;
-  title: string;
-  description: string;
+  title: TranslatedText;
+  description: TranslatedText;
   tags: string[];
   imageUrl?: string;
   liveUrl?: string;
@@ -30,6 +36,9 @@ export function ProjectCard({
   featured = false,
   onOpenCard,
 }: ProjectCardProps) {
+  const { i18n } = useTranslation();
+  const locale = i18n.language as "en" | "vi";
+
   return (
     <>
       <motion.div
@@ -62,7 +71,7 @@ export function ProjectCard({
               <div className='relative mb-6 overflow-hidden rounded-xl border border-white/10 aspect-[16/10]'>
                 <Image
                   src={imageUrl}
-                  alt={title}
+                  alt={title[locale]}
                   fill
                   sizes='(max-width: 768px) 100vw, 600px'
                   className='object-cover transition duration-500 group-hover:scale-[1.04]'
@@ -83,12 +92,12 @@ export function ProjectCard({
 
             {/* Title */}
             <h3 className='mb-3 text-lg font-semibold tracking-tight leading-tight text-white sm:text-xl'>
-              {title}
+              {title[locale]}
             </h3>
 
             {/* Description */}
             <p className='mb-6 line-clamp-3 text-sm leading-relaxed text-gray-400/90 sm:text-[15px]'>
-              {description}
+              {description[locale]}
             </p>
 
             {/* Tags */}

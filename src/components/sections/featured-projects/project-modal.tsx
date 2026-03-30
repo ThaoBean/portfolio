@@ -19,16 +19,16 @@ type ProjectInfoItem = {
   company: string;
   client: string;
   isOutsourced: boolean;
-  role: string;
-  duration: string;
-  teamSize: string;
+  role: { en: string; vi: string };
+  duration: { en: string; vi: string };
+  teamSize: { en: string; vi: string };
 };
 
 type DetailedProject = {
   id: string;
-  title: string;
-  overview: string[];
-  contributions: string[];
+  title: { en: string; vi: string };
+  overview: { en: string[]; vi: string[] };
+  contributions: { en: string[]; vi: string[] };
   tags: string[];
   imageUrl?: string;
   projectInfo: ProjectInfoItem;
@@ -45,7 +45,8 @@ export function ProjectModal({
   onOpenChange,
   selectedProject,
 }: ProjectModalProps) {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const locale = i18n.language as "en" | "vi";
 
   const project: DetailedProject = useMemo(() => {
     return DETAILED_PROJECTS[selectedProject];
@@ -64,22 +65,22 @@ export function ProjectModal({
       },
       {
         label: t("common.labels.role"),
-        value: role,
+        value: role[locale],
         icon: Briefcase,
         highlight: true,
       },
       {
         label: t("common.labels.duration"),
-        value: duration,
+        value: duration[locale],
         icon: Calendar,
       },
       {
         label: t("common.labels.teamSize"),
-        value: teamSize,
+        value: teamSize[locale],
         icon: Users,
       },
     ];
-  }, [project.projectInfo, t]);
+  }, [project.projectInfo, t, locale]);
 
   return (
     <Dialog open={!!open} onOpenChange={onOpenChange}>
@@ -101,7 +102,7 @@ export function ProjectModal({
         {/* HEADER */}
         <DialogHeader className='px-6 pt-6 pb-4 border-b border-white/10'>
           <DialogTitle className='text-xl font-semibold tracking-tight'>
-            {project.title}
+            {project.title[locale]}
           </DialogTitle>
         </DialogHeader>
 
@@ -126,7 +127,7 @@ export function ProjectModal({
                   {t("common.labels.overview")}
                 </h3>
                 <ul className='list-disc space-y-2 pl-5 text-sm text-gray-400'>
-                  {project.overview.map((paragraph, idx) => (
+                  {project.overview[locale].map((paragraph, idx) => (
                     <li
                       key={idx}
                       className='text-sm leading-relaxed text-gray-400'
@@ -174,7 +175,7 @@ export function ProjectModal({
                   {t("common.labels.keyContributions")}
                 </h3>
                 <ul className='list-disc space-y-2 pl-5 text-sm text-gray-400'>
-                  {project?.contributions?.map((contribution, idx) => (
+                  {project?.contributions[locale]?.map((contribution, idx) => (
                     <li key={idx}>{contribution}</li>
                   ))}
                 </ul>

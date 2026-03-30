@@ -36,6 +36,7 @@ export function Skills() {
           "WebSocket",
           "PostgreSQL",
           "MongoDB",
+          "Prisma",
         ],
       },
       {
@@ -54,7 +55,7 @@ export function Skills() {
           <h2 className='text-2xl font-semibold text-white sm:text-3xl'>
             {t("sections.skills.title")}
           </h2>
-          <p className='mt-3 max-w-2xl text-gray-400'>
+          <p className='mt-3  text-gray-400'>
             {t("sections.skills.description")}
           </p>
         </div>

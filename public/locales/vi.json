@@ -11,11 +11,11 @@
       "vi": "Tiếng Việt"
     },
     "actions": {
-      "viewProjects": "Xem Dự án",
+      "viewProjects": "Xem dự án",
       "downloadCv": "Tải CV",
-      "liveDemo": "Demo trực tiếp",
+      "liveDemo": "Xem demo",
       "source": "Mã nguồn",
-      "emailMe": "Gửi Email",
+      "emailMe": "Nhắn email",
       "github": "GitHub",
       "linkedin": "LinkedIn"
     },
@@ -24,39 +24,39 @@
       "outsource": "Outsource",
       "company": "Công ty",
       "client": "Khách hàng",
-      "role": "Vai trò",
+      "role": "Vị trí",
       "duration": "Thời gian",
       "teamSize": "Quy mô nhóm",
       "overview": "Tổng quan",
       "projectDetails": "Chi tiết dự án",
-      "keyContributions": "Đóng góp chính",
-      "techStack": "Công nghệ"
+      "keyContributions": "Đóng góp nổi bật",
+      "techStack": "Công nghệ sử dụng"
     }
   },
   "hero": {
-    "badge": "Kỹ sư Frontend • 3+ năm kinh nghiệm",
+    "badge": "Frontend Engineer • Hơn 3 năm kinh nghiệm",
     "heading": {
-      "prefix": "Xây dựng các",
-      "highlight": "ứng dụng web thời gian thực có khả năng mở rộng"
+      "prefix": "Xây dựng những",
+      "highlight": "ứng dụng web thời gian thực, hiệu năng cao"
     },
-    "subtitle": "Chuyên về React, Next.js và hệ thống WebSocket. Tập trung vào hiệu năng, kiến trúc sạch và trải nghiệm người dùng đáng tin cậy."
+    "subtitle": "Chuyên sâu về React, Next.js và WebSocket. Chú trọng vào hiệu năng, kiến trúc rõ ràng và trải nghiệm người dùng ổn định."
   },
   "sections": {
     "featuredProjects": {
       "title": "Dự án nổi bật",
-      "description": "Các sản phẩm chọn lọc tập trung vào hệ thống thời gian thực, UI có khả năng mở rộng và kiến trúc sẵn sàng cho sản xuất."
+      "description": "Các sản phẩm tiêu biểu xoay quanh hệ thống thời gian thực, giao diện linh hoạt và kiến trúc đã được triển khai thực tế."
     },
     "skills": {
       "title": "Kỹ năng kỹ thuật",
-      "description": "Công nghệ và công cụ tôi sử dụng để xây dựng ứng dụng web có thể mở rộng và đáng tin cậy."
+      "description": "Những công nghệ và công cụ tôi dùng để xây dựng ứng dụng web hiệu năng cao và dễ bảo trì."
     },
     "experience": {
       "title": "Kinh nghiệm",
-      "description": "Hành trình nghề nghiệp của tôi trong việc xây dựng các ứng dụng web có khả năng mở rộng và thời gian thực."
+      "description": "Hành trình của tôi trong việc xây dựng các ứng dụng web thời gian thực và có khả năng mở rộng."
     },
     "contact": {
-      "title": "Hãy cùng hợp tác",
-      "description": "Tôi sẵn sàng cho các cơ hội Frontend hoặc Fullstack. Hãy liên hệ nếu bạn muốn cộng tác hoặc thảo luận về một vị trí."
+      "title": "Cùng làm việc nhé!",
+      "description": "Tôi đang mở cửa với các cơ hội Frontend hoặc Fullstack. Liên hệ với tôi nếu bạn muốn hợp tác hoặc trao đổi về một vị trí phù hợp."
     }
   }
 }

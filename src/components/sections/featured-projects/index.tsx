@@ -21,7 +21,7 @@ export function FeaturedProjects() {
             <h2 className='text-2xl font-semibold text-white sm:text-3xl'>
               {t("sections.featuredProjects.title")}
             </h2>
-            <p className='mt-3 max-w-2xl text-gray-400'>
+            <p className='mt-3  text-gray-400'>
               {t("sections.featuredProjects.description")}
             </p>
           </div>
