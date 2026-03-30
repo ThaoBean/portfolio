@@ -11,6 +11,7 @@ import Image from "next/image";
 import { cn } from "@/src/lib/utils";
 import { Building2, Briefcase, Calendar, Users, Handshake } from "lucide-react";
 import { useMemo } from "react";
+import { useTranslation } from "react-i18next";
 import { DETAILED_PROJECTS } from "../../../db/detail-project";
 import { PROJECTS_NAME } from "../../../db/constants";
 
@@ -44,6 +45,8 @@ export function ProjectModal({
   onOpenChange,
   selectedProject,
 }: ProjectModalProps) {
+  const { t } = useTranslation();
+
   const project: DetailedProject = useMemo(() => {
     return DETAILED_PROJECTS[selectedProject];
   }, [selectedProject]);
@@ -52,13 +55,31 @@ export function ProjectModal({
     const { company, client, role, duration, teamSize, isOutsourced } =
       project.projectInfo;
     return [
-      { label: "Company", value: company, icon: Building2 },
-      { label: "Client", value: client, icon: Handshake, isOutsourced },
-      { label: "Role", value: role, icon: Briefcase, highlight: true },
-      { label: "Duration", value: duration, icon: Calendar },
-      { label: "Team Size", value: teamSize, icon: Users },
+      { label: t("common.labels.company"), value: company, icon: Building2 },
+      {
+        label: t("common.labels.client"),
+        value: client,
+        icon: Handshake,
+        isOutsourced,
+      },
+      {
+        label: t("common.labels.role"),
+        value: role,
+        icon: Briefcase,
+        highlight: true,
+      },
+      {
+        label: t("common.labels.duration"),
+        value: duration,
+        icon: Calendar,
+      },
+      {
+        label: t("common.labels.teamSize"),
+        value: teamSize,
+        icon: Users,
+      },
     ];
-  }, [project.projectInfo]);
+  }, [project.projectInfo, t]);
 
   return (
     <Dialog open={!!open} onOpenChange={onOpenChange}>
@@ -102,7 +123,7 @@ export function ProjectModal({
               {/* OVERVIEW */}
               <section>
                 <h3 className='mb-2 text-sm font-semibold text-indigo-300'>
-                  Overview
+                  {t("common.labels.overview")}
                 </h3>
                 <ul className='list-disc space-y-2 pl-5 text-sm text-gray-400'>
                   {project.overview.map((paragraph, idx) => (
@@ -122,13 +143,11 @@ export function ProjectModal({
               {/* PROJECT META */}
               <section className='space-y-4'>
                 <h3 className='text-sm font-semibold text-indigo-300'>
-                  Project Details
+                  {t("common.labels.projectDetails")}
                 </h3>
 
                 <div className='space-y-4 text-sm'>
                   {_projectInfo.map((prj, idx) => {
-                    console.log("project lablel", prj.label);
-
                     return (
                       <div className='flex items-start gap-3' key={idx}>
                         <prj.icon className='mt-0.5 h-4 w-4 text-gray-500' />
@@ -136,8 +155,10 @@ export function ProjectModal({
                           <div className='text-gray-500'>{prj.label}</div>
                           <div className='text-gray-300'>
                             {prj.value}
-                            {prj.label === "Client" && prj.isOutsourced ? (
-                              <span className='text-gray-500'>(Outsource)</span>
+                            {prj.isOutsourced ? (
+                              <span className='ml-1 text-gray-500'>
+                                ({t("common.labels.outsource")})
+                              </span>
                             ) : null}
                           </div>
                         </div>
@@ -150,7 +171,7 @@ export function ProjectModal({
               {/* CONTRIBUTIONS */}
               <section>
                 <h3 className='mb-3 text-sm font-semibold text-indigo-300'>
-                  Key Contributions
+                  {t("common.labels.keyContributions")}
                 </h3>
                 <ul className='list-disc space-y-2 pl-5 text-sm text-gray-400'>
                   {project?.contributions?.map((contribution, idx) => (
@@ -162,7 +183,7 @@ export function ProjectModal({
               {/* TECH STACK */}
               <section>
                 <h3 className='mb-3 text-sm font-semibold text-indigo-300'>
-                  Tech Stack
+                  {t("common.labels.techStack")}
                 </h3>
                 <div className='flex flex-wrap gap-2'>
                   {project?.tags?.map((tech) => (
