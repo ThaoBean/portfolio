@@ -5,7 +5,8 @@ import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 
 export function ExperienceTimeline() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const locale = i18n.language as "en" | "vi";
 
   return (
     <section id='experience' className='py-24 sm:py-28'>
@@ -55,18 +56,20 @@ export function ExperienceTimeline() {
                   >
                     {/* company + role */}
                     <h3 className='text-lg font-semibold text-white'>
-                      {exp.role}
+                      {exp.role[locale]}
                     </h3>
                     <p className='mt-1 text-sm text-indigo-300'>
                       {exp.company}
                     </p>
 
                     {/* period */}
-                    <p className='mt-2 text-xs text-gray-500'>{exp.period}</p>
+                    <p className='mt-2 text-xs text-gray-500'>
+                      {exp.period[locale]}
+                    </p>
 
                     {/* description */}
                     <p className='mt-4 text-sm leading-relaxed text-gray-400'>
-                      {exp.description}
+                      {exp.description[locale]}
                     </p>
 
                     {/* tech */}

@@ -36,6 +36,7 @@ export function Skills() {
           "WebSocket",
           "PostgreSQL",
           "MongoDB",
+          "Prisma",
         ],
       },
       {
