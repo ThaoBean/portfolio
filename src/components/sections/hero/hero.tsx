@@ -1,10 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import { Button } from "../../ui/button";
 import { ArrowDownRight } from "lucide-react";
 
 export function Hero() {
+  const { t } = useTranslation();
   return (
     <section className='relative overflow-hidden py-24 sm:py-28'>
       {/* gradient background glow */}
@@ -23,22 +25,20 @@ export function Hero() {
           >
             {/* badge */}
             <div className='mb-6 inline-flex items-center rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-sm text-gray-300 backdrop-blur'>
-              Frontend Engineer • 3+ years experience
+              {t("hero.badge")}
             </div>
 
             {/* heading */}
             <h1 className='mb-6 text-3xl font-bold leading-tight text-white sm:text-4xl lg:text-5xl'>
-              Building scalable{" "}
+              {t("hero.heading.prefix")}{" "}
               <span className='bg-gradient-to-r from-indigo-400 to-cyan-400 bg-clip-text text-transparent'>
-                real-time web applications
+                {t("hero.heading.highlight")}
               </span>
             </h1>
 
             {/* subtitle */}
             <p className='mx-auto mb-8 max-w-xl text-base leading-relaxed text-gray-400 sm:text-lg lg:mx-0'>
-              Specialized in React, Next.js, and WebSocket systems. Focused on
-              performance, clean architecture, and delivering reliable user
-              experiences.
+              {t("hero.subtitle")}
             </p>
 
             {/* CTA */}
@@ -49,7 +49,7 @@ export function Hero() {
                 asChild
               >
                 <a href='#projects'>
-                  View Projects
+                  {t("common.actions.viewProjects")}
                   <ArrowDownRight className='ml-2 h-4 w-4' />
                 </a>
               </Button>
@@ -65,7 +65,7 @@ export function Hero() {
                   target='_blank'
                   rel='noreferrer'
                 >
-                  Download CV
+                  {t("common.actions.downloadCv")}
                 </a>
               </Button>
             </div>

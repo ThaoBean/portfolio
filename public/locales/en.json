@@ -1,0 +1,62 @@
+{
+  "common": {
+    "nav": {
+      "projects": "Projects",
+      "skills": "Skills",
+      "experience": "Experience",
+      "contact": "Contact"
+    },
+    "languages": {
+      "en": "English",
+      "vi": "Vietnamese"
+    },
+    "actions": {
+      "viewProjects": "View Projects",
+      "downloadCv": "Download CV",
+      "liveDemo": "Live Demo",
+      "source": "Source",
+      "emailMe": "Email Me",
+      "github": "GitHub",
+      "linkedin": "LinkedIn"
+    },
+    "labels": {
+      "featured": "Featured",
+      "outsource": "Outsource",
+      "company": "Company",
+      "client": "Client",
+      "role": "Role",
+      "duration": "Duration",
+      "teamSize": "Team Size",
+      "overview": "Overview",
+      "projectDetails": "Project Details",
+      "keyContributions": "Key Contributions",
+      "techStack": "Tech Stack"
+    }
+  },
+  "hero": {
+    "badge": "Frontend Engineer • 3+ years experience",
+    "heading": {
+      "prefix": "Building scalable",
+      "highlight": "real-time web applications"
+    },
+    "subtitle": "Specialized in React, Next.js, and WebSocket systems. Focused on performance, clean architecture, and delivering reliable user experiences."
+  },
+  "sections": {
+    "featuredProjects": {
+      "title": "Featured Projects",
+      "description": "Selected work focused on real-time systems, scalable UI, and production-ready architecture."
+    },
+    "skills": {
+      "title": "Technical Skills",
+      "description": "Technologies and tools I use to build scalable and reliable web applications."
+    },
+    "experience": {
+      "title": "Experience",
+      "description": "My professional journey building scalable and real-time web applications."
+    },
+    "contact": {
+      "title": "Let’s work together",
+      "description": "I’m open to Frontend or Fullstack opportunities. Feel free to reach out if you’d like to collaborate or discuss a role."
+    }
+  }
+}
