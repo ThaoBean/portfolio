@@ -56,7 +56,9 @@
     },
     "contact": {
       "title": "Let’s work together",
-      "description": "I’m open to Frontend or Fullstack opportunities. Feel free to reach out if you’d like to collaborate or discuss a role."
+      "description": "I’m open to Frontend or Fullstack opportunities. Feel free to reach out if you’d like to collaborate or discuss a role.",
+      "active": "Available for new opportunities",
+      "connect": "Get in touch"
     }
   }
 }
