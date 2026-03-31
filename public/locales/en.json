@@ -59,6 +59,15 @@
       "description": "I’m open to Frontend or Fullstack opportunities. Feel free to reach out if you’d like to collaborate or discuss a role.",
       "active": "Available for new opportunities",
       "connect": "Get in touch"
+    },
+    "notFound": {
+      "statusHeader": "Error",
+      "statusText": "status 404 · page not found",
+      "title": "Oops — this page does not exist",
+      "description": "Looks like you followed a broken link or typed a wrong URL. Let's get you back on track.",
+      "backHome": "Back to Home",
+      "viewProjects": "View Projects",
+      "footer": "thao.do · portfolio"
     }
   }
 }

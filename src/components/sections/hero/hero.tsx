@@ -57,7 +57,7 @@ export function Hero() {
               <Button
                 size='lg'
                 variant='outline'
-                className='w-full sm:w-auto border-white/15 bg-white/5 text-white hover:bg-white/10'
+                className='w-full sm:w-auto border-white/15 bg-white/5 text-white hover:bg-white/10 hover:text-white'
                 asChild
               >
                 <a
