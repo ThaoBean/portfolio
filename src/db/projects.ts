@@ -18,7 +18,7 @@ export const PROJECTS = [
       vi: "Xây dựng nền tảng chăm sóc khách hàng đa kênh thời gian thực, tập trung tin nhắn từ Facebook, Telegram, Instagram và LINE vào một hộp thư duy nhất — tích hợp chatbot AI và quản lý đơn hàng.",
     },
     tags: ["React", "Next.js", "NestJS", "WebSocket", "Tailwind"],
-    imageUrl: "/projects/centamess.jpg",
+    imageUrl: "/projects/centamess.png",
     liveUrl: "https://centamess.com",
   },
   {
@@ -56,7 +56,7 @@ export const PROJECTS = [
       "Jest",
       "Cypress",
     ],
-    imageUrl: "/projects/indra_avitech.jpeg",
+    imageUrl: "/projects/indra_avitech.png",
     liveUrl: "",
   },
   {
@@ -71,7 +71,7 @@ export const PROJECTS = [
       vi: "Xây dựng ứng dụng quản lý công việc theo phong cách Kanban cho khách hàng tại Đức, với tính năng kéo-thả trên bảng, cập nhật công việc theo thời gian thực.",
     },
     tags: ["ReactJS", "TypeScript", "@hello-pangea/dnd", "RESTful API", "Jest"],
-    imageUrl: "",
+    imageUrl: "/projects/barbaard-img.png",
     liveUrl: "",
   },
   {
@@ -86,7 +86,7 @@ export const PROJECTS = [
       vi: "Phát triển và bảo trì ứng dụng đặt lịch cho thương hiệu dịch vụ grooming cao cấp, tập trung vào độ ổn định UX, tích hợp API.",
     },
     tags: ["React Native", "TypeScript", "NativeBase", "RESTful API"],
-    imageUrl: "/projects/barbaard.jpg",
+    imageUrl: "/projects/barbaard-img.png",
     liveUrl: "",
   },
 ];
