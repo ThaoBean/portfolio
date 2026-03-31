@@ -81,7 +81,7 @@ export const DETAILED_PROJECTS = {
       "PostgreSQL",
       "Prisma",
     ],
-    imageUrl: "/projects/centamess.jpg",
+    imageUrl: "/projects/centamess.png",
   },
 
   [PROJECTS_NAME.OUTLIER_AI]: {
@@ -190,7 +190,7 @@ export const DETAILED_PROJECTS = {
       "Jest",
       "Cypress",
     ],
-    imageUrl: "/projects/indra_avitech.jpeg",
+    imageUrl: "/projects/indra_avitech.png",
   },
 
   [PROJECTS_NAME.PROWO]: {
@@ -241,7 +241,7 @@ export const DETAILED_PROJECTS = {
       ],
     },
     tags: ["ReactJS", "TypeScript", "@hello-pangea/dnd", "RESTful API", "Jest"],
-    imageUrl: "/projects/prowo.jpg",
+    imageUrl: "/projects/barbaard-img.png",
   },
 
   [PROJECTS_NAME.BARBAARD]: {
@@ -288,6 +288,6 @@ export const DETAILED_PROJECTS = {
       ],
     },
     tags: ["React Native", "TypeScript", "NativeBase", "RESTful API"],
-    imageUrl: "/projects/barbaard.jpg",
+    imageUrl: "/projects/barbaard-img.png",
   },
 };

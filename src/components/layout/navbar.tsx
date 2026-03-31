@@ -111,7 +111,7 @@ export function Navbar() {
             href='#'
             className='text-sm font-semibold tracking-wide text-white'
           >
-            Thao.dev
+            Thao.Do
           </a>
 
           {/* desktop nav (center) */}

@@ -114,7 +114,7 @@ export function ProjectModal({
               {/* IMAGE */}
               <div className='relative overflow-hidden rounded-xl border border-white/10 aspect-video'>
                 <Image
-                  src={project.imageUrl || "/projects/centamess.jpg"}
+                  src={project.imageUrl || "/projects/default.jpg"}
                   alt='project preview'
                   fill
                   className='object-cover'
