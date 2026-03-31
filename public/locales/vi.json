@@ -55,8 +55,10 @@
       "description": "Hành trình của tôi trong việc xây dựng các ứng dụng web thời gian thực và có khả năng mở rộng."
     },
     "contact": {
-      "title": "Cùng làm việc nhé!",
-      "description": "Tôi đang mở cửa với các cơ hội Frontend hoặc Fullstack. Liên hệ với tôi nếu bạn muốn hợp tác hoặc trao đổi về một vị trí phù hợp."
+      "title": "Hãy cùng hợp tác",
+      "description": "Tôi đang tìm kiếm cơ hội Frontend hoặc Fullstack. Hãy liên hệ nếu bạn muốn hợp tác hoặc trao đổi về một vị trí phù hợp.",
+      "active": "Sẵn sàng cho cơ hội mới",
+      "connect": "Kết nối với tôi"
     }
   }
 }
