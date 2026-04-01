@@ -59,6 +59,15 @@
       "description": "Tôi đang tìm kiếm cơ hội Frontend hoặc Fullstack. Hãy liên hệ nếu bạn muốn hợp tác hoặc trao đổi về một vị trí phù hợp.",
       "active": "Sẵn sàng cho cơ hội mới",
       "connect": "Kết nối với tôi"
+    },
+    "notFound": {
+      "statusHeader": "Lỗi",
+      "statusText": "404 · trang không tồn tại",
+      "title": "Oops — trang này không tồn tại",
+      "description": "Có vẻ bạn theo một liên kết bị hỏng hoặc nhập sai URL. Hãy để tôi giúp bạn quay lại đúng hướng.",
+      "backHome": "Quay lại trang chủ",
+      "viewProjects": "Xem dự án",
+      "footer": "thao.do · portfolio"
     }
   }
 }
