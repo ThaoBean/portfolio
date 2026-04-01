@@ -1,6 +1,7 @@
 {
   "common": {
     "nav": {
+      "about": "About",
       "projects": "Projects",
       "skills": "Skills",
       "experience": "Experience",
@@ -49,6 +50,34 @@
     "skills": {
       "title": "Technical Skills",
       "description": "Technologies and tools I use to build scalable and reliable web applications."
+    },
+    "about": {
+      "label": "About Me",
+      "title": "The person",
+      "titleHighlight": "behind the code",
+      "profileName": "Thao Do",
+      "profileRole": "Frontend Engineer · Hanoi",
+      "description": [
+        "I'm a Frontend Developer based in Hanoi, Vietnam, with 3+ years of production experience building real-world web and mobile applications across diverse domains — from aviation systems to omnichannel commerce.",
+        "I specialize in ReactJS, Next.js, and TypeScript, with a strong focus on clean architecture and component reusability. Over the past year, I've expanded into full-stack development with NestJS, building backend APIs and integrating AI-powered features into production products."
+      ],
+      "hobbies": ["Badminton", "Coding", "Sleep"],
+      "stats": {
+        "experience": "Years of experience",
+        "projects": "Projects shipped",
+        "countries": "Countries of clients"
+      },
+      "futureLabel": "Where I'm headed",
+      "future": {
+        "title": "Fullstack Engineering",
+        "description": "I'm deepening my expertise toward Fullstack Engineering — expanding beyond the frontend to architect end-to-end systems, own the full delivery cycle, and bridge the gap between UI and infrastructure. I believe the best frontend engineers are those who understand the full picture."
+      },
+      "highlights": [
+        "Frontend Engineer with 3+ years of production experience",
+        "Specialized in React, Next.js, and real-time systems",
+        "Strong focus on performance, clean architecture, and testing",
+        "Passionate about mentoring and pair programming"
+      ]
     },
     "experience": {
       "title": "Experience",

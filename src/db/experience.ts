@@ -59,7 +59,7 @@ export const EXPERIENCES: ExperienceItem[] = [
   {
     company: "MTT Software x Mission Digitalisierung GmbH",
     role: {
-      en: "Frontend Developer",
+      en: "Frontend Engineer",
       vi: "Lập trình viên Frontend",
     },
     period: {
@@ -81,7 +81,7 @@ export const EXPERIENCES: ExperienceItem[] = [
   {
     company: "MTT Software x Mission Digitalisierung GmbH",
     role: {
-      en: "Frontend Developer",
+      en: "Frontend Engineer",
       vi: "Lập trình viên Frontend",
     },
     period: {
@@ -106,7 +106,7 @@ export const EXPERIENCES: ExperienceItem[] = [
   {
     company: "MTT Software x Connecta",
     role: {
-      en: "Frontend Developer",
+      en: "Frontend Engineer",
       vi: "Lập trình viên Frontend",
     },
     period: {

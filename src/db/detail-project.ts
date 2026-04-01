@@ -154,7 +154,7 @@ export const DETAILED_PROJECTS = {
       client: "Indra Avitech",
       isOutsourced: true,
       role: {
-        en: "Frontend Developer",
+        en: "Frontend Engineer",
         vi: "Lập trình viên Frontend",
       },
       duration: {
@@ -214,7 +214,7 @@ export const DETAILED_PROJECTS = {
       client: "Mission Digitalisierung GmbH",
       isOutsourced: true,
       role: {
-        en: "Frontend Developer",
+        en: "Frontend Engineer",
         vi: "Lập trình viên Frontend",
       },
       duration: {
@@ -263,7 +263,7 @@ export const DETAILED_PROJECTS = {
       client: "Connecta",
       isOutsourced: true,
       role: {
-        en: "Frontend Developer",
+        en: "Frontend Engineer",
         vi: "Lập trình viên Frontend",
       },
       duration: {

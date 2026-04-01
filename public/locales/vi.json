@@ -1,6 +1,7 @@
 {
   "common": {
     "nav": {
+      "about": "Về tôi",
       "projects": "Dự án",
       "skills": "Kỹ năng",
       "experience": "Kinh nghiệm",
@@ -49,6 +50,34 @@
     "skills": {
       "title": "Kỹ năng kỹ thuật",
       "description": "Những công nghệ và công cụ tôi dùng để xây dựng ứng dụng web hiệu năng cao và dễ bảo trì."
+    },
+    "about": {
+      "label": "Về tôi",
+      "title": "Cô gái",
+      "titleHighlight": "phía sau những dòng code",
+      "profileName": "Thao Do",
+      "profileRole": "Frontend Engineer · Hà Nội",
+      "description": [
+        "Tôi là một Frontend Developer có trụ sở tại Hà Nội, Việt Nam, với hơn 3 năm kinh nghiệm sản xuất xây dựng những ứng dụng web và mobile thực tế trên nhiều lĩnh vực khác nhau — từ hệ thống hàng không đến thương mại omnichannel.",
+        "Tôi chuyên về ReactJS, Next.js, và TypeScript, với trọng tâm mạnh mẽ vào kiến trúc sạch sẽ và tái sử dụng thành phần. Trong năm qua, tôi đã mở rộng sang phát triển full-stack với NestJS, xây dựng các API backend và tích hợp các tính năng do AI cung cấp vào các sản phẩm sản xuất."
+      ],
+      "hobbies": ["Cầu lông", "Coding", "Ngủ"],
+      "stats": {
+        "experience": "Năm kinh nghiệm",
+        "projects": "Dự án hoàn thành",
+        "countries": "Quốc gia có khách hàng"
+      },
+      "futureLabel": "Hướng đi tương lai",
+      "future": {
+        "title": "Fullstack Engineering",
+        "description": "Tôi đang từng bước mở rộng bản thân theo hướng Fullstack Engineering — không chỉ dừng lại ở frontend mà còn xây dựng khả năng thiết kế hệ thống end-to-end, làm chủ toàn bộ vòng đời sản phẩm và kết nối liền mạch giữa giao diện người dùng và hạ tầng phía sau."
+      },
+      "highlights": [
+        "Frontend Engineer với hơn 3 năm kinh nghiệm trong sản xuất",
+        "Chuyên sâu về React, Next.js và các hệ thống thời gian thực",
+        "Chú trọng vào hiệu năng, kiến trúc sạch và thử nghiệm",
+        "Đam mê mentoring và pair programming"
+      ]
     },
     "experience": {
       "title": "Kinh nghiệm",
