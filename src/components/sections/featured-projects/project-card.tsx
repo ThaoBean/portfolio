@@ -30,7 +30,7 @@ export function ProjectCard({
   title,
   description,
   tags,
-  imageUrl,
+  imageUrl = "/projects/default.jpg",
   liveUrl,
   githubUrl,
   featured = false,

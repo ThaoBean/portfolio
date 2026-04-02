@@ -44,7 +44,7 @@ export const EXPERIENCES: ExperienceItem[] = [
     company: "MTT Software x Outlier AI",
     role: {
       en: "Prompt & JavaScript Engineer",
-      vi: "Kỹ sư Prompt & JavaScript",
+      vi: "Prompt & JavaScript Engineer",
     },
     period: {
       en: "08/2024 — 12/2024",
@@ -59,8 +59,8 @@ export const EXPERIENCES: ExperienceItem[] = [
   {
     company: "MTT Software x Mission Digitalisierung GmbH",
     role: {
-      en: "Frontend Engineer",
-      vi: "Lập trình viên Frontend",
+      en: "Frontend Developer",
+      vi: "Frontend Developer",
     },
     period: {
       en: "04/2024 — 08/2024",
@@ -81,8 +81,8 @@ export const EXPERIENCES: ExperienceItem[] = [
   {
     company: "MTT Software x Mission Digitalisierung GmbH",
     role: {
-      en: "Frontend Engineer",
-      vi: "Lập trình viên Frontend",
+      en: "Frontend Developer",
+      vi: "Frontend Developer",
     },
     period: {
       en: "01/2023 — 03/2024",
@@ -106,8 +106,8 @@ export const EXPERIENCES: ExperienceItem[] = [
   {
     company: "MTT Software x Connecta",
     role: {
-      en: "Frontend Engineer",
-      vi: "Lập trình viên Frontend",
+      en: "Frontend Developer",
+      vi: "Frontend Developer",
     },
     period: {
       en: "06/2022 — 12/2022",

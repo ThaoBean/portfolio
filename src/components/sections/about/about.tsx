@@ -3,30 +3,11 @@
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { User } from "lucide-react";
+import { aboutMe } from "../../../db/about-me";
 
 export function About() {
-  const { t } = useTranslation();
-
-  const hobbies = [
-    "sections.about.hobbies.0",
-    "sections.about.hobbies.1",
-    "sections.about.hobbies.2",
-  ];
-
-  const stats = [
-    {
-      value: "3+",
-      label: "sections.about.stats.experience",
-    },
-    {
-      value: "5+",
-      label: "sections.about.stats.projects",
-    },
-    {
-      value: "3",
-      label: "sections.about.stats.countries",
-    },
-  ];
+  const { t, i18n } = useTranslation();
+  const currentLang = i18n.language as "en" | "vi";
 
   return (
     <section id='about' className='relative py-24 sm:py-32'>
@@ -82,29 +63,29 @@ export function About() {
               <div className='flex items-center gap-2'>
                 <div className='h-2 w-2 rounded-full bg-green-400' />
                 <p className='font-semibold text-white'>
-                  {t("sections.about.profileName")}
+                  {aboutMe.profileName[currentLang]}
                 </p>
               </div>
               <p className='text-sm text-gray-400'>
-                {t("sections.about.profileRole")}
+                {aboutMe.profileRole[currentLang]}
               </p>
             </div>
 
             {/* hobby tags */}
-            <div className='flex flex-wrap gap-2'>
-              {hobbies.map((key) => (
+            {/* <div className='flex flex-wrap gap-2'>
+              {aboutMe.hobbies.map((hobby) => (
                 <motion.div
-                  key={key}
+                  key={hobby[currentLang]}
                   initial={{ opacity: 0, scale: 0.9 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4 }}
                   className='rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-xs font-medium text-gray-300 backdrop-blur hover:bg-white/[0.08] transition'
                 >
-                  {t(key)}
+                  {hobby[currentLang]}
                 </motion.div>
               ))}
-            </div>
+            </div> */}
           </motion.div>
 
           {/* right: description section */}
@@ -117,31 +98,22 @@ export function About() {
           >
             {/* description paragraphs */}
             <div className='space-y-4 prose prose-invert max-w-none'>
-              <p
-                className='text-base leading-relaxed text-gray-300'
-                dangerouslySetInnerHTML={{
-                  __html: t("sections.about.description.0"),
-                }}
-              />
-              <p
-                className='text-base leading-relaxed text-gray-300'
-                dangerouslySetInnerHTML={{
-                  __html: t("sections.about.description.1"),
-                }}
-              />
-              {/* <p
-                className='text-base leading-relaxed text-gray-300'
-                dangerouslySetInnerHTML={{
-                  __html: t("sections.about.description.2"),
-                }}
-              /> */}
+              {aboutMe.description.map((desc, index) => (
+                <p
+                  key={index}
+                  className='text-base leading-relaxed text-gray-300'
+                  dangerouslySetInnerHTML={{
+                    __html: desc[currentLang],
+                  }}
+                />
+              ))}
             </div>
 
             {/* stats cards */}
             <div className='grid grid-cols-3 gap-4 pt-4'>
-              {stats.map((stat, index) => (
+              {aboutMe.stats.map((stat, index) => (
                 <motion.div
-                  key={stat.label}
+                  key={stat.label[currentLang]}
                   initial={{ opacity: 0, y: 16 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -152,7 +124,7 @@ export function About() {
                     {stat.value}
                   </p>
                   <p className='mt-1 text-xs font-medium text-gray-400'>
-                    {t(stat.label)}
+                    {stat.label[currentLang]}
                   </p>
                 </motion.div>
               ))}
@@ -169,13 +141,12 @@ export function About() {
               <p className='mb-3 text-sm font-semibold uppercase tracking-wider text-indigo-400'>
                 {t("sections.about.futureLabel")}
               </p>
-              <p className='text-base leading-relaxed text-gray-300'>
-                <span className='font-semibold text-white'>
-                  {t("sections.about.future.title")}
-                </span>
-                {" — "}
-                {t("sections.about.future.description")}
-              </p>
+              <p
+                className='text-base leading-relaxed text-gray-300'
+                dangerouslySetInnerHTML={{
+                  __html: aboutMe.future.description[currentLang],
+                }}
+              />
             </motion.div>
           </motion.div>
         </div>

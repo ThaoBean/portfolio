@@ -110,7 +110,7 @@ export function Navbar() {
           {/* logo */}
           <a
             href='#'
-            className='text-sm font-semibold tracking-wide text-white'
+            className='text-md font-semibold tracking-wide text-white'
           >
             Thao.Do
           </a>

@@ -71,7 +71,7 @@ export const PROJECTS = [
       vi: "Xây dựng ứng dụng quản lý công việc theo phong cách Kanban cho khách hàng tại Đức, với tính năng kéo-thả trên bảng, cập nhật công việc theo thời gian thực.",
     },
     tags: ["ReactJS", "TypeScript", "@hello-pangea/dnd", "RESTful API", "Jest"],
-    imageUrl: "/projects/barbaard-img.png",
+    // imageUrl: "/projects/barbaard-img.png",
     liveUrl: "",
   },
   {
