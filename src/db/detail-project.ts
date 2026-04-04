@@ -105,7 +105,7 @@ export const DETAILED_PROJECTS = {
       client: "Outlier AI",
       isOutsourced: true,
       role: {
-        en: "Prompt & JavaScript Engineer",
+        en: "Prompt & JavaScript Developer",
         vi: "Kỹ sư Prompt & JavaScript",
       },
       duration: {
@@ -241,7 +241,7 @@ export const DETAILED_PROJECTS = {
       ],
     },
     tags: ["ReactJS", "TypeScript", "@hello-pangea/dnd", "RESTful API", "Jest"],
-    imageUrl: "/projects/barbaard-img.png",
+    // imageUrl: "/projects/barbaard-img.png",
   },
 
   [PROJECTS_NAME.BARBAARD]: {

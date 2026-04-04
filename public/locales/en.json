@@ -1,6 +1,7 @@
 {
   "common": {
     "nav": {
+      "about": "About",
       "projects": "Projects",
       "skills": "Skills",
       "experience": "Experience",
@@ -34,7 +35,7 @@
     }
   },
   "hero": {
-    "badge": "Frontend Engineer • 3+ years experience",
+    "badge": "Frontend Developer • 3.5+ years experience",
     "heading": {
       "prefix": "Building scalable",
       "highlight": "real-time web applications"
@@ -49,6 +50,12 @@
     "skills": {
       "title": "Technical Skills",
       "description": "Technologies and tools I use to build scalable and reliable web applications."
+    },
+    "about": {
+      "label": "About Me",
+      "title": "The person",
+      "titleHighlight": "behind the code",
+      "futureLabel": "Where I'm headed"
     },
     "experience": {
       "title": "Experience",

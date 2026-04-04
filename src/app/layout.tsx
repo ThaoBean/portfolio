@@ -17,9 +17,9 @@ const geistMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Do Thi Thao — Frontend Engineer",
+  title: "Do Thi Thao — Frontend Developer",
   description:
-    "Frontend Engineer specializing in React, Next.js, and real-time web applications.",
+    "Frontend Developer specializing in React, Next.js, and real-time web applications.",
 };
 
 export default function RootLayout({

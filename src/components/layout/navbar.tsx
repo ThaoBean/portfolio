@@ -7,6 +7,7 @@ import { useLocale } from "@/src/i18n/use-locale";
 import { useTranslation } from "react-i18next";
 
 const navItems = [
+  { label: "common.nav.about", href: "#about" },
   { label: "common.nav.projects", href: "#projects" },
   { label: "common.nav.skills", href: "#skills" },
   { label: "common.nav.experience", href: "#experience" },
@@ -109,7 +110,7 @@ export function Navbar() {
           {/* logo */}
           <a
             href='#'
-            className='text-sm font-semibold tracking-wide text-white'
+            className='text-md font-semibold tracking-wide text-white'
           >
             Thao.Do
           </a>

@@ -1,6 +1,7 @@
 {
   "common": {
     "nav": {
+      "about": "Về tôi",
       "projects": "Dự án",
       "skills": "Kỹ năng",
       "experience": "Kinh nghiệm",
@@ -34,7 +35,7 @@
     }
   },
   "hero": {
-    "badge": "Frontend Engineer • Hơn 3 năm kinh nghiệm",
+    "badge": "Frontend Developer • Hơn 3.5 năm kinh nghiệm",
     "heading": {
       "prefix": "Xây dựng những",
       "highlight": "ứng dụng web thời gian thực, hiệu năng cao"
@@ -49,6 +50,12 @@
     "skills": {
       "title": "Kỹ năng kỹ thuật",
       "description": "Những công nghệ và công cụ tôi dùng để xây dựng ứng dụng web hiệu năng cao và dễ bảo trì."
+    },
+    "about": {
+      "label": "Về tôi",
+      "title": "Cô gái",
+      "titleHighlight": "phía sau những dòng code",
+      "futureLabel": "Hướng đi tương lai"
     },
     "experience": {
       "title": "Kinh nghiệm",
