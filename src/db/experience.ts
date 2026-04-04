@@ -73,8 +73,9 @@ export const EXPERIENCES: ExperienceItem[] = [
     technologies: [
       "ReactJS",
       "TypeScript",
+      "Material UI",
+      "React Query",
       "@hello-pangea/dnd",
-      "RESTful API",
       "Jest",
     ],
   },
@@ -117,6 +118,12 @@ export const EXPERIENCES: ExperienceItem[] = [
       en: "Developed and maintained a React Native mobile booking app for a premium grooming service brand, integrated RESTful APIs with backend data synchronization, and delivered new features in a fast-paced outsourcing environment.",
       vi: "Phát triển và bảo trì ứng dụng đặt lịch cho thương hiệu dịch vụ chăm sóc cao cấp, tích hợp RESTful API với đồng bộ hóa dữ liệu phía máy chủ, và triển khai các tính năng mới.",
     },
-    technologies: ["React Native", "TypeScript", "NativeBase", "RESTful API"],
+    technologies: [
+      "React Native",
+      "TypeScript",
+      "NativeBase",
+      "Redux Toolkit",
+      "RESTful API",
+    ],
   },
 ];
