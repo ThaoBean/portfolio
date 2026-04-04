@@ -240,7 +240,14 @@ export const DETAILED_PROJECTS = {
         "Viết unit test để đảm bảo chất lượng và độ ổn định của các component.",
       ],
     },
-    tags: ["ReactJS", "TypeScript", "@hello-pangea/dnd", "RESTful API", "Jest"],
+    tags: [
+      "ReactJS",
+      "TypeScript",
+      "@hello-pangea/dnd",
+      "React Query",
+      "Material UI",
+      "Jest",
+    ],
     // imageUrl: "/projects/barbaard-img.png",
   },
 
@@ -287,7 +294,13 @@ export const DETAILED_PROJECTS = {
         "Triển khai tính năng mới và xử lý bug theo yêu cầu từ khách hàng trong môi trường outsource.",
       ],
     },
-    tags: ["React Native", "TypeScript", "NativeBase", "RESTful API"],
+    tags: [
+      "React Native",
+      "TypeScript",
+      "NativeBase",
+      "RESTful API",
+      "Redux Toolkit",
+    ],
     imageUrl: "/projects/barbaard-img.png",
   },
 };
