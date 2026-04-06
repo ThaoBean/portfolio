@@ -1,8 +1,9 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import ReactCountryFlag from "react-country-flag";
 import { useLocale } from "@/src/i18n/use-locale";
 import { useTranslation } from "react-i18next";
 
@@ -13,6 +14,22 @@ const navItems = [
   { label: "common.nav.experience", href: "#experience" },
   { label: "common.nav.contact", href: "#contact" },
 ];
+
+type LangMeta = { code: string; label: string; flag: ReactNode };
+
+const flagIcon = (countryCode: string, label: string) => (
+  <span
+    aria-hidden='true'
+    className='inline-flex h-5 w-5 items-center justify-center leading-none'
+  >
+    <ReactCountryFlag
+      countryCode={countryCode}
+      svg
+      title={label}
+      style={{ width: "18px", height: "12px" }}
+    />
+  </span>
+);
 
 export function Navbar() {
   const { t } = useTranslation();
@@ -39,31 +56,39 @@ export function Navbar() {
     };
   }, []);
 
-  const currentLang = (() => {
+  const currentLang: LangMeta = (() => {
     switch (language) {
-      case "vi":
+      case "vi": {
+        const label = t("common.languages.vi");
         return {
           code: "VI",
-          label: t("common.languages.vi"),
-          flag: "🇻🇳",
+          label,
+          flag: flagIcon("VN", label),
         };
+      }
       case "en":
-      default:
+      default: {
+        const label = t("common.languages.en");
         return {
           code: "EN",
-          label: t("common.languages.en"),
-          flag: "🇺🇸",
+          label,
+          flag: flagIcon("US", label),
         };
+      }
     }
   })();
 
-  const langMeta = (lng: string) => {
+  const langMeta = (lng: string): LangMeta => {
     switch (lng) {
-      case "vi":
-        return { code: "VI", label: t("common.languages.vi"), flag: "🇻🇳" };
+      case "vi": {
+        const label = t("common.languages.vi");
+        return { code: "VI", label, flag: flagIcon("VN", label) };
+      }
       case "en":
-      default:
-        return { code: "EN", label: t("common.languages.en"), flag: "🇺🇸" };
+      default: {
+        const label = t("common.languages.en");
+        return { code: "EN", label, flag: flagIcon("US", label) };
+      }
     }
   };
 
