@@ -35,7 +35,7 @@
     },
     "toast": {
       "downloadCv": {
-        "success": "Download started.",
+        "success": "Download successful.",
         "error": "Download failed. Please try again."
       }
     }

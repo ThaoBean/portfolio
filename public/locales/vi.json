@@ -35,7 +35,7 @@
     },
     "toast": {
       "downloadCv": {
-        "success": "Bắt đầu tải xuống.",
+        "success": "Tải xuống thành công.",
         "error": "Tải xuống thất bại. Vui lòng thử lại."
       }
     }
