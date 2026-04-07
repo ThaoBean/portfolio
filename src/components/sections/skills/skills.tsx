@@ -1,12 +1,26 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { LayoutPanelTop, Server, Wrench } from "lucide-react";
 import { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 
 type SkillGroup = {
   title: string;
   skills: string[];
+};
+
+const groupIcon = (title: string) => {
+  switch (title) {
+    case "Frontend":
+      return LayoutPanelTop;
+    case "Backend":
+      return Server;
+    case "Testing & Tools":
+      return Wrench;
+    default:
+      return LayoutPanelTop;
+  }
 };
 
 export function Skills() {
@@ -17,11 +31,12 @@ export function Skills() {
       {
         title: "Frontend",
         skills: [
-          "React",
+          "ReactJs",
           "Next.js",
           "TypeScript",
           "Tailwind CSS",
           "shadcn/ui",
+          "Material UI",
           "Redux Toolkit",
           "React Query",
           "Zustand",
@@ -71,9 +86,17 @@ export function Skills() {
               transition={{ duration: 0.45, ease: "easeOut" }}
               className='rounded-2xl border border-white/10 bg-white/[0.04] p-6 backdrop-blur'
             >
-              {/* group title */}
-              <h3 className='mb-5 text-lg font-semibold text-indigo-300'>
-                {group.title}
+              <h3 className='mb-5 flex items-center gap-2 text-lg font-semibold text-indigo-300'>
+                {(() => {
+                  const Icon = groupIcon(group.title);
+                  return (
+                    <Icon
+                      aria-hidden='true'
+                      className='h-5 w-5 shrink-0 text-indigo-300'
+                    />
+                  );
+                })()}
+                <span>{group.title}</span>
               </h3>
 
               {/* cloud */}
