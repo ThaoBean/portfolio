@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
+import { Toaster } from "sonner";
 import "./globals.css";
 import { Navbar } from "../components/layout/navbar";
 import { I18nProvider } from "../i18n/provider";
@@ -35,6 +36,7 @@ export default function RootLayout({
         <I18nProvider>
           <Navbar />
           <div className='pt-16'>{children}</div>
+          <Toaster richColors theme='dark' position='top-right' />
         </I18nProvider>
       </body>
     </html>

@@ -32,6 +32,12 @@
       "projectDetails": "Project Details",
       "keyContributions": "Key Contributions",
       "techStack": "Tech Stack"
+    },
+    "toast": {
+      "downloadCv": {
+        "success": "Download started.",
+        "error": "Download failed. Please try again."
+      }
     }
   },
   "hero": {

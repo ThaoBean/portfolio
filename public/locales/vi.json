@@ -32,6 +32,12 @@
       "projectDetails": "Chi tiết dự án",
       "keyContributions": "Đóng góp nổi bật",
       "techStack": "Công nghệ sử dụng"
+    },
+    "toast": {
+      "downloadCv": {
+        "success": "Bắt đầu tải xuống.",
+        "error": "Tải xuống thất bại. Vui lòng thử lại."
+      }
     }
   },
   "hero": {

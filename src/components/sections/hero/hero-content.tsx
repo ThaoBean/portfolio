@@ -1,12 +1,60 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { ArrowDownRight, Download, Loader2 } from "lucide-react";
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
+import { toast } from "sonner";
 import { Button } from "../../ui/button";
-import { ArrowDownRight } from "lucide-react";
 
 export function HeroContent() {
   const { t } = useTranslation();
+  const [downloading, setDownloading] = useState(false);
+
+  const downloadCv = async () => {
+    if (downloading) return;
+
+    const cvPath = "/cv/ThaoDo_Frontend_CV.pdf";
+    const fallbackName = cvPath.split("/").pop() ?? "cv.pdf";
+
+    try {
+      setDownloading(true);
+
+      const res = await fetch(cvPath);
+      if (!res.ok) throw new Error(`Failed to download: ${res.status}`);
+
+      const cd = res.headers.get("content-disposition");
+      const headerName = (() => {
+        if (!cd) return null;
+        const m = cd.match(/filename\*?=(?:UTF-8''|"?)([^";]+)/i);
+        if (!m?.[1]) return null;
+        try {
+          return decodeURIComponent(m[1]);
+        } catch {
+          return m[1];
+        }
+      })();
+
+      const fileName = headerName || fallbackName;
+      const blob = await res.blob();
+      const url = window.URL.createObjectURL(blob);
+
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = fileName;
+      a.rel = "noreferrer";
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+
+      window.setTimeout(() => window.URL.revokeObjectURL(url), 1000);
+      toast.success(t("common.toast.downloadCv.success"));
+    } catch {
+      toast.error(t("common.toast.downloadCv.error"));
+    } finally {
+      setDownloading(false);
+    }
+  };
 
   return (
     <motion.div
@@ -49,12 +97,16 @@ export function HeroContent() {
         <Button
           size='lg'
           variant='outline'
-          className='w-full sm:w-auto border-white/15 bg-white/5 text-white hover:bg-white/10 hover:text-white'
-          asChild
+          className='w-full sm:w-auto border-white/15 bg-white/5 text-white hover:bg-white/10 hover:text-white hover:cursor-pointer'
+          onClick={downloadCv}
+          disabled={downloading}
         >
-          <a href='/DoThiThao-Frontend-CV.pdf' target='_blank' rel='noreferrer'>
-            {t("common.actions.downloadCv")}
-          </a>
+          {t("common.actions.downloadCv")}
+          {downloading ? (
+            <Loader2 className='h-4 w-4 animate-spin' />
+          ) : (
+            <Download className='h-4 w-4' />
+          )}
         </Button>
       </div>
     </motion.div>
