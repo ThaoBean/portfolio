@@ -7,7 +7,7 @@ import { useTranslation } from "react-i18next";
 export default function NotFound() {
   const { t } = useTranslation();
   return (
-    <div className='flex min-h-screen flex-col items-center justify-center bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 px-4'>
+    <div className='relative flex min-h-[calc(100vh-4rem)] min-h-[calc(100dvh-4rem)] flex-col items-center justify-center bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 px-4'>
       {/* Terminal Header */}
       <div className='mb-12 w-full max-w-2xl'>
         <div className='rounded-2xl border border-slate-700 bg-slate-900/50 px-4 py-3 backdrop-blur'>
@@ -71,7 +71,7 @@ export default function NotFound() {
       </div>
 
       {/* Footer */}
-      <div className='absolute bottom-6 text-center text-sm text-slate-500'>
+      <div className='absolute bottom-6 left-0 right-0 text-center text-sm text-slate-500'>
         <span className='inline-flex items-center gap-1.5'>
           <span className='h-2 w-2 rounded-full bg-green-500'></span>
           {t("sections.notFound.footer")}
