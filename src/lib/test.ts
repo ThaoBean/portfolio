@@ -1,0 +1,1 @@
+// This file is testing the TypeScript type checking for the data structures used in the portfolio. It imports the types and data from the respective files and ensures that they conform to the expected shapes.
