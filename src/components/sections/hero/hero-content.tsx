@@ -14,7 +14,7 @@ export function HeroContent() {
   const downloadCv = async () => {
     if (downloading) return;
 
-    const cvPath = "/cv/ThaoDo_Frontend_CV.pdf";
+    const cvPath = "/cv/ThaoDo_FrontendDeveloper_CV.pdf";
     const fallbackName = cvPath.split("/").pop() ?? "cv.pdf";
 
     try {
