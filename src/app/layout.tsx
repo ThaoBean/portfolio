@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import { Toaster } from "sonner";
 import "./globals.css";
-// import { Navbar } from "../components/layout/navbar";
+import { Navbar } from "../components/layout/navbar";
 import { I18nProvider } from "../i18n/provider";
 
 const geistSans = Inter({
@@ -34,7 +34,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#0B0F19] text-white`}
       >
         <I18nProvider>
-          {/* <Navbar /> */}
+          <Navbar />
           <div className='pt-16'>{children}</div>
           <Toaster richColors theme='dark' position='top-right' />
         </I18nProvider>
